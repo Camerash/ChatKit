@@ -36,6 +36,7 @@ import com.stfalcon.chatkit.commons.ViewHolder;
 import com.stfalcon.chatkit.commons.models.IMessage;
 import com.stfalcon.chatkit.utils.DateFormatter;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -58,6 +59,7 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     private int selectedItemsCount;
     private SelectionListener selectionListener;
 
+    WeakReference<RecyclerScrollMoreListener> scrollMoreListener;
     private OnLoadMoreListener loadMoreListener;
     private OnMessageClickListener<MESSAGE> onMessageClickListener;
     private OnMessageViewClickListener<MESSAGE> onMessageViewClickListener;
@@ -121,9 +123,9 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     }
 
     @Override
-    public void onLoadMore(int page, int total) {
+    public void onLoadMore(int total) {
         if (loadMoreListener != null) {
-            loadMoreListener.onLoadMore(page, total);
+            loadMoreListener.onLoadMore(total);
         }
     }
 
@@ -141,6 +143,19 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     /*
      * PUBLIC METHODS
      * */
+
+    public void startListeningScroll() {
+        RecyclerScrollMoreListener listener = this.scrollMoreListener.get();
+        if (listener != null) {
+            listener.startListening();
+        }
+    }
+    public void stopListeningScroll() {
+        RecyclerScrollMoreListener listener = this.scrollMoreListener.get();
+        if (listener != null) {
+            listener.stopListening();
+        }
+    }
 
     /**
      * Adds message to bottom of list and scroll if needed.
@@ -662,10 +677,9 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
         /**
          * Fires when user scrolled to the end of list.
          *
-         * @param page            next page to download.
          * @param totalItemsCount current items count.
          */
-        void onLoadMore(int page, int totalItemsCount);
+        void onLoadMore(int totalItemsCount);
     }
 
     /**

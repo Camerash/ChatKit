@@ -14,7 +14,7 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.messages;
+package com.camerash.skygear.chatkit.messages;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -24,7 +24,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.util.AttributeSet;
 
-import com.stfalcon.chatkit.commons.models.IMessage;
+import com.camerash.skygear.chatkit.commons.models.IMessage;
 
 import java.lang.ref.WeakReference;
 

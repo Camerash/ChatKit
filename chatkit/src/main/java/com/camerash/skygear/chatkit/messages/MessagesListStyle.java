@@ -14,7 +14,7 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.messages;
+package com.camerash.skygear.chatkit.messages;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -27,8 +27,8 @@ import android.support.annotation.DrawableRes;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.AttributeSet;
 
-import com.stfalcon.chatkit.R;
-import com.stfalcon.chatkit.commons.Style;
+import com.camerash.skygear.chatkit.R;
+import com.camerash.skygear.chatkit.commons.Style;
 
 /**
  * Style for MessagesListStyle customization by xml attributes

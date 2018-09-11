@@ -14,15 +14,15 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.dialogs;
+package com.camerash.skygear.chatkit.dialogs;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 
-import com.stfalcon.chatkit.R;
-import com.stfalcon.chatkit.commons.Style;
+import com.camerash.skygear.chatkit.R;
+import com.camerash.skygear.chatkit.commons.Style;
 
 /**
  * Style for DialogList customization by xml attributes

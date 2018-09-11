@@ -14,7 +14,7 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.messages;
+package com.camerash.skygear.chatkit.messages;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -31,7 +31,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.stfalcon.chatkit.R;
+import com.camerash.skygear.chatkit.R;
 
 import java.lang.reflect.Field;
 

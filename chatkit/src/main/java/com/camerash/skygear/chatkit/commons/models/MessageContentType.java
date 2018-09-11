@@ -14,27 +14,29 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.commons.models;
+package com.camerash.skygear.chatkit.commons.models;
 
-import java.util.List;
+import android.support.annotation.Nullable;
+import com.camerash.skygear.chatkit.messages.MessageHolders;
 
-/**
- * For implementing by real dialog model
+/*
+ * Created by troy379 on 28.03.17.
  */
 
-public interface IDialog<MESSAGE extends IMessage> {
+/**
+ * Interface used to mark messages as custom content types. For its representation see {@link MessageHolders}
+ */
 
-    String getId();
+public interface MessageContentType extends IMessage {
 
-    String getDialogPhoto();
+    /**
+     * Default media type for image message.
+     */
+    interface Image extends IMessage {
+        @Nullable
+        String getImageUrl();
+    }
 
-    String getDialogName();
+    // other default types will be here
 
-    List<? extends IUser> getUsers();
-
-    MESSAGE getLastMessage();
-
-    void setLastMessage(MESSAGE message);
-
-    int getUnreadCount();
 }

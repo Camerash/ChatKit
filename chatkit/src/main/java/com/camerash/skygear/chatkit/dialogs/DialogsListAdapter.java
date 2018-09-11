@@ -14,7 +14,7 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.dialogs;
+package com.camerash.skygear.chatkit.dialogs;
 
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
@@ -28,12 +28,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.stfalcon.chatkit.R;
-import com.stfalcon.chatkit.commons.ImageLoader;
-import com.stfalcon.chatkit.commons.ViewHolder;
-import com.stfalcon.chatkit.commons.models.IDialog;
-import com.stfalcon.chatkit.commons.models.IMessage;
-import com.stfalcon.chatkit.utils.DateFormatter;
+import com.camerash.skygear.chatkit.R;
+import com.camerash.skygear.chatkit.commons.ImageLoader;
+import com.camerash.skygear.chatkit.commons.ViewHolder;
+import com.camerash.skygear.chatkit.commons.models.IDialog;
+import com.camerash.skygear.chatkit.commons.models.IMessage;
+import com.camerash.skygear.chatkit.utils.DateFormatter;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;

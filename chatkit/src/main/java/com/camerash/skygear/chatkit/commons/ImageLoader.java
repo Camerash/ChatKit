@@ -14,40 +14,15 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.commons.models;
+package com.camerash.skygear.chatkit.commons;
 
-import java.util.Date;
+import android.widget.ImageView;
 
 /**
- * For implementing by real message model
+ * Callback for implementing images loading in message list
  */
-public interface IMessage {
+public interface ImageLoader {
 
-    /**
-     * Returns message identifier
-     *
-     * @return the message id
-     */
-    String getId();
+    void loadImage(ImageView imageView, String url);
 
-    /**
-     * Returns message text
-     *
-     * @return the message text
-     */
-    String getText();
-
-    /**
-     * Returns message author. See the {@link IUser} for more details
-     *
-     * @return the message author
-     */
-    IUser getUser();
-
-    /**
-     * Returns message creation date
-     *
-     * @return the message creation date
-     */
-    Date getCreatedAt();
 }

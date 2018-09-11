@@ -20,13 +20,13 @@ android {
 }
 
 publish {
-    groupId = 'com.github.stfalcon'
+    groupId = 'com.camerash.skygear'
     artifactId = 'chatkit'
     publishVersion = '0.3.1'
     desc = 'Customized ChatKit for Skygear Chat SDK'
     licences = ['Apache-2.0']
     uploadName = 'ChatKit'
-    website = 'https://github.com/stfalcon-studio/ChatKit.git'
+    website = 'https://github.com/camerash/ChatKit.git'
 }
 
 ext {

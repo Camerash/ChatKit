@@ -1,4 +1,4 @@
-package com.stfalcon.chatkit.messages;
+package com.camerash.skygear.chatkit.messages;
 
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -14,13 +14,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.stfalcon.chatkit.R;
-import com.stfalcon.chatkit.commons.ImageLoader;
-import com.stfalcon.chatkit.commons.ViewHolder;
-import com.stfalcon.chatkit.commons.models.IMessage;
-import com.stfalcon.chatkit.commons.models.MessageContentType;
-import com.stfalcon.chatkit.utils.DateFormatter;
-import com.stfalcon.chatkit.utils.RoundedImageView;
+import com.camerash.skygear.chatkit.R;
+import com.camerash.skygear.chatkit.commons.ImageLoader;
+import com.camerash.skygear.chatkit.commons.ViewHolder;
+import com.camerash.skygear.chatkit.commons.models.IMessage;
+import com.camerash.skygear.chatkit.commons.models.MessageContentType;
+import com.camerash.skygear.chatkit.utils.DateFormatter;
+import com.camerash.skygear.chatkit.utils.RoundedImageView;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;

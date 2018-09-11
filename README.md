@@ -28,7 +28,7 @@ Need iOS and Android apps, MVP development or prototyping? Contact us via info@s
 
 ## Demo Application
 
-[![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/store/apps/details?id=com.stfalcon.chatkit.sample)
+[![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/store/apps/details?id=com.camerash.skygear.chatkit.sample)
 
 ### How to use
 
@@ -59,19 +59,19 @@ or Maven:
 ### Proguard
 If you are using ProGuard you might need to add rules:
 ```
--keep class * extends com.stfalcon.chatkit.messages.MessageHolders$OutcomingTextMessageViewHolder {
+-keep class * extends com.camerash.skygear.chatkit.messages.MessageHolders$OutcomingTextMessageViewHolder {
      public <init>(android.view.View, java.lang.Object);
      public <init>(android.view.View);
  }
--keep class * extends com.stfalcon.chatkit.messages.MessageHolders$IncomingTextMessageViewHolder {
+-keep class * extends com.camerash.skygear.chatkit.messages.MessageHolders$IncomingTextMessageViewHolder {
      public <init>(android.view.View, java.lang.Object);
      public <init>(android.view.View);
  }
--keep class * extends com.stfalcon.chatkit.messages.MessageHolders$IncomingImageMessageViewHolder {
+-keep class * extends com.camerash.skygear.chatkit.messages.MessageHolders$IncomingImageMessageViewHolder {
      public <init>(android.view.View, java.lang.Object);
      public <init>(android.view.View);
  }
--keep class * extends com.stfalcon.chatkit.messages.MessageHolders$OutcomingImageMessageViewHolder {
+-keep class * extends com.camerash.skygear.chatkit.messages.MessageHolders$OutcomingImageMessageViewHolder {
      public <init>(android.view.View, java.lang.Object);
      public <init>(android.view.View);
  }

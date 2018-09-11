@@ -1,4 +1,4 @@
-package com.stfalcon.chatkit.utils;
+package com.camerash.skygear.chatkit.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -23,7 +23,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 /**
  * Thanks to Joonho Kim (https://github.com/pungrue26) for his lightweight SelectableRoundedImageView,

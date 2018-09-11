@@ -14,7 +14,7 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.commons;
+package com.camerash.skygear.chatkit.commons;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -28,7 +28,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
-import com.stfalcon.chatkit.R;
+import com.camerash.skygear.chatkit.R;
 
 /**
  * Base class for chat component styles

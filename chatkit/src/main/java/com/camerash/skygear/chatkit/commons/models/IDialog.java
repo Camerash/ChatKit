@@ -14,31 +14,27 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.commons.models;
+package com.camerash.skygear.chatkit.commons.models;
+
+import java.util.List;
 
 /**
- * For implementing by real user model
+ * For implementing by real dialog model
  */
-public interface IUser {
 
-    /**
-     * Returns the user's id
-     *
-     * @return the user's id
-     * */
+public interface IDialog<MESSAGE extends IMessage> {
+
     String getId();
 
-    /**
-     * Returns the user's name
-     *
-     * @return the user's name
-     * */
-    String getName();
+    String getDialogPhoto();
 
-    /**
-     * Returns the user's avatar image url
-     *
-     * @return the user's avatar image url
-     * */
-    String getAvatar();
+    String getDialogName();
+
+    List<? extends IUser> getUsers();
+
+    MESSAGE getLastMessage();
+
+    void setLastMessage(MESSAGE message);
+
+    int getUnreadCount();
 }

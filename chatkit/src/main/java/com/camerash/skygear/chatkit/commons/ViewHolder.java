@@ -14,7 +14,7 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.commons;
+package com.camerash.skygear.chatkit.commons;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

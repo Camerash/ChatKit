@@ -14,7 +14,7 @@
  * limitations under the License.
  *******************************************************************************/
 
-package com.stfalcon.chatkit.utils;
+package com.camerash.skygear.chatkit.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

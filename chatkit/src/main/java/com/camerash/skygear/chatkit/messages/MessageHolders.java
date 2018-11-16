@@ -483,6 +483,37 @@ public class MessageHolders {
         return this;
     }
 
+    /**
+     * Registers custom content type (e.g. multimedia, events etc.)
+     *
+     * @param type             unique id for content type
+     * @param incomingHolder   holder class for incoming message
+     * @param outcomingHolder  holder class for outcoming message
+     * @param incomingPayload  payload for incoming message
+     * @param outcomingPayload payload for outcoming message
+     * @param incomingLayout   layout resource for incoming message
+     * @param outcomingLayout  layout resource for outcoming message
+     * @param contentChecker   {@link MessageHolders.ContentChecker} for registered type
+     * @return {@link MessageHolders} for subsequent configuration.
+     */
+    public <TYPE extends MessageContentType>
+    MessageHolders registerContentType(
+            byte type,
+            @NonNull Class<? extends MessageHolders.BaseMessageViewHolder<TYPE>> incomingHolder, Object incomingPayload, @LayoutRes int incomingLayout,
+            @NonNull Class<? extends MessageHolders.BaseMessageViewHolder<TYPE>> outcomingHolder, Object outcomingPayload, @LayoutRes int outcomingLayout,
+            @NonNull MessageHolders.ContentChecker contentChecker) {
+
+        if (type == 0)
+            throw new IllegalArgumentException("content type must be greater or less than '0'!");
+
+        customContentTypes.add(
+                new MessageHolders.ContentTypeConfig<>(type,
+                        new MessageHolders.HolderConfig<>(incomingHolder, incomingLayout, incomingPayload),
+                        new MessageHolders.HolderConfig<>(outcomingHolder, outcomingLayout, outcomingPayload)));
+        this.contentChecker = contentChecker;
+        return this;
+    }
+
     /*
      * INTERFACES
      * */
@@ -706,7 +737,6 @@ public class MessageHolders {
                 }
             });
         }
-
     }
 
     /**
@@ -851,7 +881,7 @@ public class MessageHolders {
         public void onBind(MESSAGE message) {
             super.onBind(message);
             if (image != null && imageLoader != null) {
-                imageLoader.loadImage(image, message.getImageUrl());
+                imageLoader.loadImage(image, message.getImageUrl(), getPayloadForImageLoader(message));
             }
 
             if (imageOverlay != null) {
@@ -873,11 +903,20 @@ public class MessageHolders {
             }
         }
 
+        /**
+         * Override this method to have ability to pass custom data in ImageLoader for loading image(not avatar).
+         *
+         * @param message Message with image
+         */
+        protected Object getPayloadForImageLoader(MESSAGE message) {
+            return null;
+        }
+
         private void init(View itemView) {
             image = (ImageView) itemView.findViewById(R.id.image);
             imageOverlay = itemView.findViewById(R.id.imageOverlay);
 
-            if (image != null && image instanceof RoundedImageView) {
+            if (image instanceof RoundedImageView) {
                 ((RoundedImageView) image).setCorners(
                         R.dimen.message_bubble_corners_radius,
                         R.dimen.message_bubble_corners_radius,
@@ -912,7 +951,7 @@ public class MessageHolders {
         public void onBind(MESSAGE message) {
             super.onBind(message);
             if (image != null && imageLoader != null) {
-                imageLoader.loadImage(image, message.getImageUrl());
+                imageLoader.loadImage(image, message.getImageUrl(), getPayloadForImageLoader(message));
             }
 
             if (imageOverlay != null) {
@@ -934,11 +973,20 @@ public class MessageHolders {
             }
         }
 
+        /**
+         * Override this method to have ability to pass custom data in ImageLoader for loading image(not avatar).
+         *
+         * @param message Message with image
+         */
+        protected Object getPayloadForImageLoader(MESSAGE message) {
+            return null;
+        }
+
         private void init(View itemView) {
             image = (ImageView) itemView.findViewById(R.id.image);
             imageOverlay = itemView.findViewById(R.id.imageOverlay);
 
-            if (image != null && image instanceof RoundedImageView) {
+            if (image instanceof RoundedImageView) {
                 ((RoundedImageView) image).setCorners(
                         R.dimen.message_bubble_corners_radius,
                         R.dimen.message_bubble_corners_radius,
@@ -1020,7 +1068,7 @@ public class MessageHolders {
 
                 userAvatar.setVisibility(isAvatarExists ? View.VISIBLE : View.GONE);
                 if (isAvatarExists) {
-                    imageLoader.loadImage(userAvatar, message.getUser().getAvatar());
+                    imageLoader.loadImage(userAvatar, message.getUser().getAvatar(), null);
                 }
             }
         }
